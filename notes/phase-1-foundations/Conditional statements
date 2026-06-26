@@ -1,0 +1,109 @@
+Helps in control flow of our program 
+work hand in hand with boolean values (True/False)
+public classMain{
+static boolean isRaining = true;
+public static void main (String[]args)
+if(isRaining){
+System.out.println("Bring an umbrella");
+}
+}we use if to specify a block of code we need to execute and use else to specify if the first condition is false 
+
+
+IF ELSE
+if (conditon1){
+//block of code to be executed if condition 1 is true 
+}
+else if {//block of code to be executed if conditon 1 is false}
+else{//block of code to be executed if condition 1 & 2 are false}
+
+NESTED IF - placed if statement of another statement is true . used to test multip-le conditions that depend oneach other 
+if (condition1){
+//code to return if condition is true 
+if (condition 2){
+//code to run if both condition1 and 2 are true 
+}
+}
+
+
+TERNARY OPERATOR-short cut of if else
+int timr=20;
+String result = (time<18)?"Good day":"Good evening"
+System.out.println(result);
+
+
+ Switch Statements-The switch statement selects one of many code blocks to be executed:
+switch(expression) {
+  case x:
+    // code block
+    break;
+  case y:
+    // code block
+    break;
+  default:
+    // code block
+}
+
+
+Java While Loop
+The while loop repeats a block of code as long as the specified condition is true:
+int countdown = 3;
+
+while (countdown > 0) {
+  System.out.println(countdown);
+  countdown--;
+}
+
+System.out.println("Happy New Year!!");
+
+
+The Do/While Loop
+The do/while loop is a variant of the while loop. This loop will execute the code block once, before checking if the condition is true. Then it will repeat the loop as long as the condition is true.
+int i = 0;
+do {
+  System.out.println(i);
+  i++;
+}
+while (i < 5);
+
+
+For Loop
+When you know exactly how many times you want to loop through a block of code, use the for loop instead of a while loop:
+for (statement 1; statement 2; statement 3) {
+  // code block to be executed
+}
+
+
+Nested Loops
+It is also possible to place a loop inside another loop. This is called a nested loop.
+
+The "inner loop" will be executed one time for each iteration of the "outer loop":
+for (int i = 1; i <= 2; i++) {
+  System.out.println("Outer: " + i); // Executes 2 times
+  
+  // Inner loop
+  for (int j = 1; j <= 3; j++) {
+    System.out.println(" Inner: " + j); // Executes 6 times (2 * 3)
+  }
+} 
+
+
+Break
+You have already seen the break statement used in an earlier chapter of this tutorial. It was used to "jump out" of a switch statement.
+The break statement can also be used to jump out of a loop.
+for (int i = 0; i < 10; i++) {
+  if (i == 4) {
+    break;
+  }
+  System.out.println(i);
+}
+
+
+Continue
+The continue statement breaks one iteration (in the loop), if a specified condition occurs, and continues with the next iteration in the loop.
+for (int i = 0; i < 10; i++) {
+  if (i == 4) {
+    continue;
+  }
+  System.out.println(i);
+}
+
