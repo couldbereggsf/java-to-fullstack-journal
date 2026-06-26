@@ -23,16 +23,29 @@ public class ApexLogEngine {
         this.floorGrid = new int[gridRows][gridCols];
         this.criticalAlerts = new TelemetryEvent[4]; //hii ni a a small initial baseline capacity
     }
-
-    public void pushLog(String robotId, String status){
-        //Hapa sasa we nee to construct a TelemetryEvent and safely add it to the circular array. Wewe ndo unafanya hivo😃
+    
+     public void pushLog(String robotId, String status){
+        TelemetryEvent event = new TelemetryEvent(robotId, status);
+        telemetryBuffer[head] = event;
+        head = (head + 1) % telemetryBuffer.length;
+        
+        if (logCount < telemetryBuffer.length) {
+            logCount++;
+        } else {
+            // Buffer is full: we just overwrote the oldest element, so advance tail
+            tail = (tail + 1) % telemetryBuffer.length;
+        }
     }
+
 
     public TelemetryEvent[] getAllLogs(){
         //TODO: Return all logs in strict chronological order based on head/tail state🌝
     }
     public void recordMovement(int row, int col){
         //Assignment: Increament the specified grid coordinates safely with bounds
+        if (row >= 0 && row < floorGrid.length && col >= 0 && col < floorGrid[0].length) {
+            floorGrid[row][col]++;
+        }
     }
 
     public ZoneCoordinate[] identifyingHighTrafficZones(int threshold){
