@@ -1,4 +1,4 @@
-package com.apexlog;
+package com;
 
 import com.apexlog.model.ZoneCoordinate;
 import com.apexlog.model.TelemetryEvent;
