@@ -50,6 +50,18 @@ Classes myObj2 = new Classes(); // Second Object
 myObj2.x = 10; // Set the value of x to 10 for the second object
 System.out.println(myObj.x); // Output: 5
 System.out.println(myObj2.x); // Output: 10
+* ➡️Java Class Methods
+* Methods are functions that belong to a class. They define the behaviors that the objects created from the class will 
+have. In Java, we can define methods in a class by declaring functions inside the class. These methods can have 
+different access modifiers, such as public, private, or protected, which determine their visibility and accessibility 
+from other classes. We can also define parameters for methods, which allow us to pass values to the method when it is 
+called. For example, we can define a method called "greet" in a class called "Person" as follows:
+public class Person {
+    public String name = "John"; // default value
+    public void greet() {
+        System.out.println("Hello, my name is " + name);
+    }
+}
 */
 public class Classes{
     int x;
